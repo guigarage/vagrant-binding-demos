@@ -18,6 +18,12 @@ import com.guigarage.vagrant.configuration.builder.VagrantVmConfigBuilder;
 import com.guigarage.vagrant.junit.VagrantTestRule;
 import com.guigarage.vagrant.util.VagrantUtils;
 
+/**
+ * @author hendrikebbers
+ *
+ *UnitTests that uses the {@link com.guigarage.vagrant.junit.VagrantTestRule}.
+ *The test is wrapped in the lifecycle of a vm created by Vagrant-Binding.
+ */
 public class DbHandlerTest {
 
 	/**
