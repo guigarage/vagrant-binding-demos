@@ -20,11 +20,23 @@ import com.guigarage.vagrant.util.VagrantUtils;
 
 public class DbHandlerTest {
 
+	/**
+	 * IP adress for the dbserver vm
+	 */
 	private static final String VM_IP = "192.168.50.4";
 	
+	/**
+	 * JUnit rule that syncs the lifecycle of all tests with the livecycle of a dbserver vm
+	 */
 	@Rule
 	public VagrantTestRule testRule = new VagrantTestRule(createConfig());
 
+	/**
+	 * Creates a VagrantConfiguration for a dbserver vm. Th vm is configured by puppet and is running a MySQL server.
+	 * The configuration is used by the VagrantTestRule
+	 * 
+	 * @return the VagrantConfiguration
+	 */
 	public static VagrantConfiguration createConfig() {
 		try {
 		PuppetProvisionerConfig puppetConfig = PuppetProvisionerConfigBuilder
@@ -72,6 +84,9 @@ public class DbHandlerTest {
 		}
 	}
 
+	/**
+	 * Simple UnitTests that connects to the MySQL server on the vm and creates some data
+	 */
 	@Test
 	public void testJdbc() {
 		try {
