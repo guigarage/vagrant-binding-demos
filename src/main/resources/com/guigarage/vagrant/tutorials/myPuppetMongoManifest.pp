@@ -1,3 +1,1 @@
-class mongodb {
-  init => 'upstart',
-}
+include mongodb

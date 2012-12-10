@@ -31,7 +31,7 @@ public class PuppetTutorial2 {
 		PuppetForgeClient forgeClient = new PuppetForgeClient();
 		forgeClient.installToModulesDir(tempFolder, forgeClient.findModule("puppetlabs", "mongodb"));
 		VagrantFolderTemplateConfiguration folderConfig = VagrantFolderTemplateConfigurationBuilder.create().withLocalFolder(tempFolder).withPathInVagrantFolder("puppet/modules").build();
-		VagrantFileTemplateConfiguration fileConfig = VagrantFileTemplateConfigurationBuilder.create().withUrlTemplate(VagrantUtils.getInstance().load("/com/guigarage/vagrant/tutorials/myPuppetMongoManifest.pp")).withPathInVagrantFolder("manifests/myPuppetManifest.pp").build();
+		VagrantFileTemplateConfiguration fileConfig = VagrantFileTemplateConfigurationBuilder.create().withUrlTemplate(VagrantUtils.getInstance().load("/com/guigarage/vagrant/tutorials/myPuppetMongoManifest.pp")).withPathInVagrantFolder("puppet/manifests/myPuppetManifest.pp").build();
 
 		VagrantVmConfig vmConfig = VagrantVmConfigBuilder.create().withName("demoVm")
 				.withLucid32Box().withPuppetProvisionerConfig(puppetConfig).build();
